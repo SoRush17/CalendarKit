@@ -2,8 +2,8 @@
 import UIKit
 
 public final class Event: EventDescriptor {
-  public var startDate = Date()
-  public var endDate = Date()
+  public var startDate: Date! = Date()
+  public var endDate: Date! = Date()
   public var isAllDay = false
   public var text = ""
   public var attributedText: NSAttributedString?

@@ -381,8 +381,8 @@ public final class TimelineView: UIView {
 
     // only non allDay events need their frames to be set
     let sortedEvents = self.regularLayoutAttributes.sorted { (attr1, attr2) -> Bool in
-      let start1 = attr1.descriptor.startDate
-      let start2 = attr2.descriptor.startDate
+      let start1 = attr1.descriptor.startDate!
+      let start2 = attr2.descriptor.startDate!
       return start1.isEarlier(than: start2)
     }
 
