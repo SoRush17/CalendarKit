@@ -217,11 +217,12 @@ public final class TimelinePagerView: UIView, UIGestureRecognizerDelegate, UIScr
       // algo needs to be extracted to a separate object
       let yStart = timeline.dateToY(event.startDate) - offset
       let yEnd = timeline.dateToY(event.endDate) - offset
-
+      let height = yEnd - yStart
+        
       let newRect = CGRect(x: timeline.style.leftInset,
                            y: yStart,
                            width: timeline.calendarWidth,
-                           height: yEnd - yStart)
+                           height: max(height, 30))
       eventView.frame = newRect
 
       if animated {
